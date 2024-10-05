@@ -27,3 +27,10 @@ window.onload = function() {
        }, 1000); // Delay before hiding the message
    }
 };
+
+function confirmDelete() {
+    return confirm("Are you sure you want to delete this product?");
+}
+
+
+

@@ -40,8 +40,8 @@
       
    </div>
    <div class="nav-items">
-      <li><a href="index.php">Products</a></li>
-      <li><a href="#">Categories</a></li>
+      <li><a href="index.php">Home</a></li>
+      <li><a href="menu.php">Menu</a></li>
       <li><a href="checkout.php">Checkout</a></li>
       <li><a href="cart.php"><i class="fas fa-shopping-cart"></i> <span id="cart-item" class="badge badge-danger"></span></a></li>
       <!-- User Authentication (Login/Logout) -->
@@ -136,6 +136,7 @@
     }
   });
   </script>
-</body>
+  <script src="main.js"></script>
+  </body>
 
 </html>

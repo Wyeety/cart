@@ -1,7 +1,11 @@
-<?php
-session_start(); 
-session_destroy(); 
-$url = 'index.php';
-header('Location: ' . $url); 
 
+<?php
+session_start();
+session_unset();
+session_destroy();
+
+echo "<script>
+        alert('You have successfully logged out!');
+        window.location.href = 'index.php';
+      </script>";
 ?>

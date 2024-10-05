@@ -91,7 +91,7 @@
               <tr>
                 <td><?= $row['id'] ?></td>
                 <input type="hidden" class="pid" value="<?= $row['id'] ?>">
-                <td><img src="<?= $row['product_image'] ?>" width="50"></td>
+                <td><img src="assets/<?= $row['product_image'] ?>" width="50"></td>
                 <td><?= $row['product_name'] ?></td>
                 <td>
     <span>₨</span>&nbsp;&nbsp;<?= number_format($row['total_price'],2); ?>

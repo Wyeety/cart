@@ -14,35 +14,32 @@
       <div class="container">
         <div class="box form-box">
             <?php 
-            
-             
               include("../php/config.php");
               if(isset($_POST['submit'])){
                 $email = mysqli_real_escape_string($conn,$_POST['email']);
                 $password = mysqli_real_escape_string($conn,$_POST['password']);
 
-                $result = mysqli_query($conn,"SELECT * FROM users WHERE Email='$email' AND Password='$password' ") or die("Select Error");
+                $result = mysqli_query($conn,"SELECT * FROM admin WHERE Email='$email' AND Password='$password' ") or die("Select Error");
                 $row = mysqli_fetch_assoc($result);
 
                 if(is_array($row) && !empty($row)){
                     $_SESSION['email'] = $row['Email'];
                     $_SESSION['username'] = $row['Username'];
-                    // $_SESSION['age'] = $row['Age'];
                     $_SESSION['id'] = $row['Id'];
-                }else{
-                    echo "<div class='message'>
-                      <p>Wrong Username or Password</p>
-                       </div> <br>";
-                   echo "<a href='register.php'><button class='btn'>Register</button>";
-         
-                }
-                if(isset($_SESSION['email'])){
-                    $_SESSION['login_message'] = "Login Successful!";
-                    header("Location: index.php");
-                }
-              }else{
 
-            
+                    echo "<script>
+                            alert('You are logged in successfully!');
+                            window.location.href = 'dashboard.php';
+                          </script>";
+                } else {
+                    echo "<div class='message'>
+                            <p>Wrong Username or Password</p>
+                          </div><br>";
+                    echo "<a href='register.php'><button class='btn'>Register</button></a>";
+                    echo "<a href='index.php'><button class='btn'>Login</button></a>";
+
+                }
+              } else {
             ?>
             <header>Login</header>
             <form action="" method="post">
@@ -57,7 +54,6 @@
                 </div>
 
                 <div class="field">
-                    
                     <input type="submit" class="btn" name="submit" value="Login" required>
                 </div>
                 <div class="links">

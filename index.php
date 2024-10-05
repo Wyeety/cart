@@ -23,9 +23,9 @@
          <div class="nav-items">
             <li><a href="#">Home</a></li>
             <li><a href="menu.php">Menu</a></li>
-            <li><a href="#">Gallery</a></li>
-            <li><a href="#">About Us</a></li>
-            <li><a href="#">Contact Us</a></li>
+            <!-- <li><a href="#">Gallery</a></li> -->
+            <li><a href="about.php">About Us</a></li>
+            <li><a href="contact.php">Contact Us</a></li>
             <!-- <li><a href="login1.php">Login</a></li> -->
             <?php
 						if(empty($_SESSION["email"])) // if user is not login
@@ -48,17 +48,6 @@
          </div>
       </nav>
       <!-- End navbar -->
-
-      <!-- Display login message -->
-<?php
-if(isset($_SESSION['login_message'])){
-    echo "<div class='message' id=loginMessage>
-          <p>" . $_SESSION['login_message'] . "</p>
-          </div> <br>";
-    // Clear the message after displaying it
-    unset($_SESSION['login_message']);
-}
-?>
 
       <!-- Start header -->
         <header>
